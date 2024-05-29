@@ -1,4 +1,4 @@
-export function testJoin() {
+function testJoin() {
     const cars = ["BMW", "Nissan", "Mercedez"];
     let result = cars.join(",");
     console.log(result);
@@ -26,3 +26,4 @@ export function testJoin() {
     ];
     console.log(products.map(x => x.name).join(","));
 }
+testJoin();

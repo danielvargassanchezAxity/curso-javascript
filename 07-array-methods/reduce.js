@@ -1,4 +1,4 @@
-export function testReduce(): void {
+function testReduce() {
     const products = [
         {
             id: 10,
@@ -25,8 +25,8 @@ export function testReduce(): void {
     });
     console.log(total2);
 
-
     const total = products.reduce((total, product) => total + (product.quantity * product.price), 0);
-    const products2 = products.reduce((stringProduct, product) => stringProduct + ","+product.name, "");
-    console.log(products2);
+    console.log(total);
 }
+
+testReduce();

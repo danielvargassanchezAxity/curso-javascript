@@ -1,4 +1,4 @@
-export function testLastones() {
+function testLastones() {
     const products = [
         {
             id: 10,
@@ -19,10 +19,11 @@ export function testLastones() {
             price: 200
         },  
     ];
-    const numbersList = [1,2,3,4,5,6,7,8,10]
     // some
-    // console.log(products.some(x => x.quantity <= 0));
+    console.log(products.some(x => x.quantity <= 0));
 
     // every
     console.log(products.every(x => x.quantity > 0))
 }
+
+testLastones();
