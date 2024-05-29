@@ -1,0 +1,23 @@
+HTML:
+
+    En el HTML, creamos la estructura básica del juego del gato.
+    Tenemos un contenedor principal (game-container) que contiene el tablero del juego (grid), el texto del estado del juego (status), y un botón para reiniciar el juego (restart).
+    Además, hemos añadido un modal (modal) para mostrar el mensaje de victoria.
+
+CSS:
+
+    En el CSS, aplicamos estilos para darle formato al juego del gato y al modal.
+    Centramos vertical y horizontalmente el contenido del cuerpo (body) para que el juego esté centrado en la pantalla.
+    Estilizamos el tablero del juego, las celdas del tablero, el texto del estado del juego, el botón de reinicio y el modal.
+
+JavaScript:
+
+    Empezamos seleccionando los elementos necesarios del DOM.
+    Definimos las combinaciones ganadoras posibles en un array (winningCombos).
+    Creamos variables para seguir el estado del juego, como el jugador actual (currentPlayer), si el juego está activo (gameIsLive) y el estado del tablero (board).
+    Creamos funciones para manejar la validación de resultados, clics en las celdas, y reiniciar el juego.
+    La función showModal() muestra un modal cuando hay un ganador y reinicia el juego después de 5 segundos.
+    La función handleResultValidation() verifica si hay un ganador o un empate.
+    La función handleCellClick() maneja los clics en las celdas del tablero.
+    La función restartGame() reinicia el juego.
+    Finalmente, añadimos event listeners para escuchar clics en las celdas del tablero y en el botón de reinicio.
