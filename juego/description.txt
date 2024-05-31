@@ -21,3 +21,10 @@ JavaScript:
     La función handleCellClick() maneja los clics en las celdas del tablero.
     La función restartGame() reinicia el juego.
     Finalmente, añadimos event listeners para escuchar clics en las celdas del tablero y en el botón de reinicio.
+
+
+ 0 | 1 | 2
+---------
+ 3 | 4 | 5
+---------
+ 6 | 7 | 8

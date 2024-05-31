@@ -1,8 +1,8 @@
-const grid = document.getElementById('grid');
-const status = document.getElementById('status');
-const restartBtn = document.getElementById('restart');
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modal-content');
+const grid = document.getElementById('grid') ?? new HTMLElement();
+const statusElement = document.getElementById('status')  ?? new HTMLElement();
+const restartBtn = document.getElementById('restart') ?? new HTMLElement();
+const modal = document.getElementById('modal') ?? new HTMLElement();
+const modalContent = document.getElementById('modal-content') ?? new HTMLElement();
 
 const winningCombos = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal
@@ -12,15 +12,17 @@ const winningCombos = [
 
 let currentPlayer = 'X';
 let gameIsLive = true;
-let board = ['', '', '', '', '', '', '', '', ''];
+let board = ['', '', '', 
+             '', '', '',
+             '', '', ''];
 
-const showModal = (winner) => {
+const showModal = (message) => {
     modal.style.display = 'block';
-    modalContent.innerText = `${winner} ha ganado!`;
+    modalContent.innerText = message;
     setTimeout(() => {
         modal.style.display = 'none';
         restartGame();
-    }, 5000);
+    }, 1500);
 };
 
 const handleResultValidation = () => {
@@ -37,19 +39,19 @@ const handleResultValidation = () => {
     }
 
     if (roundWon) {
-        showModal(currentPlayer);
+        showModal(`${currentPlayer} ha ganado!`);
         gameIsLive = false;
         return;
     }
 
     if (!board.includes('')) {
-        status.innerText = '¡Empate!';
+        showModal(`Empate`);
         gameIsLive = false;
         return;
     }
 
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    status.innerText = `${currentPlayer} es el siguiente`;
+    statusElement.innerText = `${currentPlayer} es el siguiente`;
 };
 
 const handleCellClick = (e) => {
@@ -69,8 +71,8 @@ const restartGame = () => {
     currentPlayer = 'X';
     gameIsLive = true;
     board = ['', '', '', '', '', '', '', '', ''];
-    status.innerText = `${currentPlayer} es el siguiente`;
-    document.querySelectorAll('.cell').forEach(cell => cell.innerText = '');
+    statusElement.innerText = `${currentPlayer} es el siguiente`;
+    document.querySelectorAll('.cell').forEach(cell => cell.textContent = '');
 };
 
 grid.addEventListener('click', handleCellClick);
