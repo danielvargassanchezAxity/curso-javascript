@@ -62,6 +62,7 @@ const handleCellClick = (e) => {
 
     board[clickedCellIndex] = currentPlayer;
     clickedCell.innerText = currentPlayer;
+    clickedCell.classList.add(`${currentPlayer}-selection`)
     handleResultValidation();
 };
 
@@ -71,7 +72,11 @@ const restartGame = () => {
     gameIsLive = true;
     board = ['', '', '', '', '', '', '', '', ''];
     statusElement.innerText = `${currentPlayer} es el siguiente`;
-    document.querySelectorAll('.cell').forEach(cell => cell.textContent = '');
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.textContent = '';
+        cell.classList.remove('O-selection');
+        cell.classList.remove('X-selection');
+    });
 };
 
 grid.addEventListener('click', handleCellClick);
