@@ -3,6 +3,8 @@ const statusElement = document.getElementById('status')  ?? new HTMLElement();
 const restartBtn = document.getElementById('restart') ?? new HTMLElement();
 const modal = document.getElementById('modal') ?? new HTMLElement();
 const modalContent = document.getElementById('modal-content') ?? new HTMLElement();
+const modalButton = document.getElementById('modal-button') ?? new HTMLElement();
+const modalMessage = document.getElementById('modal-message') ?? new HTMLElement();
 
 const winningCombos = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal
@@ -18,11 +20,7 @@ let board = ['', '', '',
 
 const showModal = (message) => {
     modal.style.display = 'block';
-    modalContent.innerText = message;
-    setTimeout(() => {
-        modal.style.display = 'none';
-        restartGame();
-    }, 1500);
+    modalMessage.innerText = message;
 };
 
 const handleResultValidation = () => {
@@ -68,6 +66,7 @@ const handleCellClick = (e) => {
 };
 
 const restartGame = () => {
+    modal.style.display = 'none';
     currentPlayer = 'X';
     gameIsLive = true;
     board = ['', '', '', '', '', '', '', '', ''];
@@ -77,3 +76,4 @@ const restartGame = () => {
 
 grid.addEventListener('click', handleCellClick);
 restartBtn.addEventListener('click', restartGame);
+modalButton.addEventListener('click', restartGame);
