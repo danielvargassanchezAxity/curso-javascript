@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/danielvargassanchezAxity/curso-javascript/issues"
   },
-  "homepage": "https://github.com/danielvargassanchezAxity/curso-javascript#readme"
+  "homepage": "https://github.com/danielvargassanchezAxity/curso-javascript#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }
