@@ -3,11 +3,14 @@
   "compilerOptions": {
     "module": "CommonJS",
     "target": "ES2016",
-    "allowImportingTsExtensions": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "allowJs": true,
-    "checkJs": true
+    "strict": true,               // Habilita todas las comprobaciones estrictas
+    "strictNullChecks": true,     // Habilita la comprobación estricta de valores nulos
+    "strictFunctionTypes": true,  // Habilita la comprobación estricta de tipos de función
+    "allowJs": true,              // Permite archivos JavaScript en el proyecto
+    "checkJs": true,              // Habilita la verificación de tipos en archivos JavaScript
+    "esModuleInterop": true,      // Habilita la interoperabilidad de módulos ES
+    "forceConsistentCasingInFileNames": true  // Fuerza el uso consistente de mayúsculas y minúsculas en los nombres de archivo
+ 
   },
   "exclude": ["node_modules", "**/node_modules/*"],
   "include": ["**/*.js"]
